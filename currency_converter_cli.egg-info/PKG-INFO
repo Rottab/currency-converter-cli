@@ -8,6 +8,4 @@ Author-email: abdurrahman.rottab@gmail.com
 License: UNKNOWN
 Description: # currency-converter-cli
 Platform: UNKNOWN
-Requires: aiosqlite
-Requires: tortoise_orm
 Requires-Python: >=3.6

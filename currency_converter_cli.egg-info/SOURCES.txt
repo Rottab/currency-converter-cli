@@ -7,4 +7,11 @@ currency_converter_cli.egg-info/PKG-INFO
 currency_converter_cli.egg-info/SOURCES.txt
 currency_converter_cli.egg-info/dependency_links.txt
 currency_converter_cli.egg-info/entry_points.txt
+currency_converter_cli.egg-info/requires.txt
 currency_converter_cli.egg-info/top_level.txt
+currency_converter_cli/models/__init__.py
+currency_converter_cli/models/dates.py
+currency_converter_cli/models/rates.py
+currency_converter_cli/utils/__init__.py
+currency_converter_cli/utils/crud.py
+currency_converter_cli/utils/db.py
