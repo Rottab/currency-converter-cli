@@ -12,6 +12,7 @@ setup(
     long_description=long_description,
     install_requires=[
         'pony',
+        'requests',
     ],
     python_requires='>=3.6',
     packages=find_packages(),
