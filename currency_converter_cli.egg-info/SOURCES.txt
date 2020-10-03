@@ -1,0 +1,10 @@
+README.md
+install.sh
+setup.py
+currency_converter_cli/__init__.py
+currency_converter_cli/__main__.py
+currency_converter_cli.egg-info/PKG-INFO
+currency_converter_cli.egg-info/SOURCES.txt
+currency_converter_cli.egg-info/dependency_links.txt
+currency_converter_cli.egg-info/entry_points.txt
+currency_converter_cli.egg-info/top_level.txt

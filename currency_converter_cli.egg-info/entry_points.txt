@@ -1,0 +1,4 @@
+[console_scripts]
+cc = currency_converter_cli.__main__:main
+currency-converter = currency_converter_cli.__main__:main
+

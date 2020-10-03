@@ -1,0 +1,13 @@
+Metadata-Version: 1.2
+Name: currency-converter-cli
+Version: 1.0.0
+Summary: Python package for currency convertion
+Home-page: UNKNOWN
+Author: Abdel Rahman Rottab
+Author-email: abdurrahman.rottab@gmail.com
+License: UNKNOWN
+Description: # currency-converter-cli
+Platform: UNKNOWN
+Requires: aiosqlite
+Requires: tortoise_orm
+Requires-Python: >=3.6
