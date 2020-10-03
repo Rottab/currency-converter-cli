@@ -13,11 +13,13 @@ def get_local_rates(currency_from, currency_to, selected_date):
             date_result = query_result.to_dict()
     else:
         # Finds the latest entry by date in the database
-        date_result = Dates.select().order_by(desc(Dates.date)).first().to_dict()
+        query_result = Dates.select().order_by(desc(Dates.date)).first()
+        if query_result:
+            date_result = query_result.to_dict()
     if not date_result:
         return False
     # Return nothing if the top most entry is outdated
-    if date_result['date'] < (date.today() - timedelta(days=1)):
+    if date_result['date'] < (date.today() - timedelta(days=1)) and not selected_date:
         return False
     # Get 'from' rate based on the latest date
     rate_from = None
@@ -56,17 +58,17 @@ def get_remote_rates_and_store(currency_from, currency_to, selected_date=None):
     if selected_date:
         json = requests.get(
             f'https://api.frankfurter.app/{selected_date}').json()
-        query_result = Dates.get(date=selected_date)
-        if query_result:
-            return _rates_from_json(currency_from, currency_to, json)
-
-        date_obj = Dates(base=json['base'], date=json['date'])
-        for code, rate in json['rates'].items():
-            Rates(date=date_obj, code=code, rate=rate)
     else:
         json = requests.get('https://api.frankfurter.app/latest').json()
-        date_obj = Dates(base=json['base'], date=json['date'])
-        for code, rate in json['rates'].items():
-            Rates(date=date_obj, code=code, rate=rate)
+
+    # If entry already in database for some reason
+    query_result = Dates.get(date=selected_date)
+    if query_result:
+        return _rates_from_json(currency_from, currency_to, json)
+
+    # Save into database
+    date_obj = Dates(base=json['base'], date=json['date'])
+    for code, rate in json['rates'].items():
+        Rates(date=date_obj, code=code, rate=rate)
 
     return _rates_from_json(currency_from, currency_to, json)
