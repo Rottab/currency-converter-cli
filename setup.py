@@ -11,8 +11,7 @@ setup(
     description='Python package for currency convertion',
     long_description=long_description,
     requires=[
-        'aiosqlite',
-        'tortoise_orm',
+        'pony',
     ],
     python_requires='>=3.6',
     packages=[
