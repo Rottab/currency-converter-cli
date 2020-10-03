@@ -1,6 +1,6 @@
 from pony import orm
-from currency_converter_cli.models.dates import create_dates
-from currency_converter_cli.models.rates import create_rates
+from ..models.dates import create_dates
+from ..models.rates import create_rates
 
 
 db = orm.Database()

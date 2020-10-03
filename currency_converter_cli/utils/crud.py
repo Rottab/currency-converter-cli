@@ -1,7 +1,7 @@
 import requests
 from datetime import date, timedelta
 from pony.orm import db_session, select, desc
-from currency_converter_cli.utils.db import Dates, Rates
+from .db import Dates, Rates
 
 
 @db_session

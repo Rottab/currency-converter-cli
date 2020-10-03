@@ -1,7 +1,7 @@
 import argparse
 from datetime import date
 
-from currency_converter_cli.utils.crud import get_remote_rates_and_store, get_local_rates
+from .utils.crud import get_remote_rates_and_store, get_local_rates
 
 
 def main(argv=None):
