@@ -13,7 +13,7 @@ def main(argv=None):
     parser.add_argument(
         '-t', '--to', help='Currency to convert to', metavar='', type=str, required=True)
     parser.add_argument(
-        '-a', '--amount', help='Base currency amount', metavar='', type=int, default=1)
+        '-a', '--amount', help='Base currency amount', metavar='', type=float, default=1)
     parser.add_argument(
         '-d', '--date', help='Date of convertion rate in yyyy-mm-dd format', metavar='',
         type=date.fromisoformat, default=None)
@@ -56,7 +56,7 @@ def convert(currency_to, currency_from=None, amount=1, selected_date=None, prett
     if not rates:
         rates = get_remote_rates_and_store(
             currency_from, currency_to, selected_date)
-    #
+    # Exchange based on the rates
     calculated_amount = calculate_rate(
         rates['rate_from'], rates['rate_to'], amount)
     # Print and return
