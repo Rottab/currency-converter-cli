@@ -32,7 +32,10 @@ def main(argv=None):
 
 
 def calculate_rate(x, y, amount):
-    return round(((1/x) * y) * amount, 3)
+    try:
+        return round(((1/x) * y) * amount, 3)
+    except ZeroDivisionError:
+        return 0.0
 
 
 def pretty_print(currency_from, currency_to, amount, calculated_amount, selected_date, pretty):
@@ -47,9 +50,11 @@ def convert(currency_to, currency_from=None, amount=1, selected_date=None, prett
     # Validate parameters
     if selected_date:
         if selected_date > date.today():
-            sys.exit(f'Invalid date argument: date entered {selected_date} current date {date.today()}')
+            sys.exit(
+                f'Invalid date argument: date entered {selected_date} current date {date.today()}')
         elif selected_date < date(year=1999, month=1, day=4):
-            sys.exit(f'Invalid date argument: date entered {selected_date} available rates begin from {date(year=1999, month=1, day=4)}')
+            sys.exit(
+                f'Invalid date argument: date entered {selected_date} available rates begin from {date(year=1999, month=1, day=4)}')
     # Check if entry exits in database
     rates = get_local_rates(currency_from, currency_to, selected_date)
     # If not. Then request from the api and save it locally

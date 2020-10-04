@@ -48,6 +48,10 @@ def get_local_rates(currency_from, currency_to, selected_date):
 
 
 def _rates_from_json(currency_from, currency_to, json):
+    if currency_to not in [*json['rates'], None, 'EUR']:
+        sys.exit(f'Invalid exchange currency code: "{currency_to}"')
+    if currency_from and currency_from not in [*json['rates'], 'EUR']:
+        sys.exit(f'Invalid base currency code: "{currency_from}"')
     return {
         'rate_from': json['rates'][currency_from] if currency_from not in [None, 'EUR'] else 1,
         'rate_to': json['rates'][currency_to] if currency_to not in [None, 'EUR'] else 1,
