@@ -1,4 +1,5 @@
 import argparse
+import sys
 from datetime import date
 
 from .utils.crud import get_remote_rates_and_store, get_local_rates
@@ -6,7 +7,7 @@ from .utils.crud import get_remote_rates_and_store, get_local_rates
 
 def main(argv=None):
     parser = argparse.ArgumentParser(
-        description='Simple currency converter cli tool based on frankfunrter api')
+        description='Simple currency converter cli tool based on frankfurter api')
     parser.add_argument(
         '-b', '--base', help='Base currency', metavar='', type=str, default='EUR')
     parser.add_argument(
@@ -46,7 +47,7 @@ def convert(currency_to, currency_from=None, amount=1, selected_date=None, prett
     # Validate parameters
     if selected_date:
         if selected_date > date.today() or selected_date < date(year=1999, month=1, day=4):
-            raise Exception('Invalid date')
+            sys.exit('Invalid date argument')
     # Check if entry exits in database
     rates = get_local_rates(currency_from, currency_to, selected_date)
     # If not. Then request from the api and save it locally

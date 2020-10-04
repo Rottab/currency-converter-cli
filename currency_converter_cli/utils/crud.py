@@ -1,4 +1,5 @@
 import requests
+import sys
 from datetime import date, timedelta
 from pony.orm import db_session, select, desc
 from .db import Dates, Rates
@@ -38,7 +39,7 @@ def get_local_rates(currency_from, currency_to, selected_date):
         if rate_result:
             rate_to = rate_result.to_dict()['rate']
         else:
-            raise Exception('CODE IS INCORRECT YOU PIECE OF SHIT')
+            sys.exit('Invalid currency code')
 
     return {
         'rate_from': rate_from,
