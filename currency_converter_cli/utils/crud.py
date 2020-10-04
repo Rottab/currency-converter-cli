@@ -56,11 +56,14 @@ def _rates_from_json(currency_from, currency_to, json):
 
 @db_session
 def get_remote_rates_and_store(currency_from, currency_to, selected_date=None):
-    if selected_date:
-        json = requests.get(
-            f'https://api.frankfurter.app/{selected_date}').json()
-    else:
-        json = requests.get('https://api.frankfurter.app/latest').json()
+    try:
+        if selected_date:
+            json = requests.get(
+                f'https://api.frankfurter.app/{selected_date}').json()
+        else:
+            json = requests.get('https://api.frankfurter.app/latest').json()
+    except Exception:
+        sys.exit('Network connection is unavailable')
     # If entry already in database for some reason
     query_result = Dates.get(date=json['date'])
     if query_result:
