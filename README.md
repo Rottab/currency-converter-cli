@@ -12,7 +12,7 @@ or
 
 > cc [options]
 ## Example
-> cc --to usd
+> currency-converter --to usd
 
 > cc --base usd --to eur
 
