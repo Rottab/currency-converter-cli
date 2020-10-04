@@ -12,9 +12,9 @@ or
 ## Example
 > cc --base usd --to eur --amount 10 --date 2014-01-01
 ## Options
-  -h, --help      show this help message and exit
-  -b , --base     Base currency
-  -t , --to       Currency to convert to
-  -a , --amount   Base currency amount
-  -d , --date     Date of convertion rate in yyyy-mm-dd format
-  -p , --pretty   Print result in pretty descriptive format
+*  -h, --help      show this help message and exit
+*  -b , --base     Base currency
+*  -t , --to       Currency to convert to
+*  -a , --amount   Base currency amount
+*  -d , --date     Date of convertion rate in yyyy-mm-dd format
+*  -p , --pretty   Print result in pretty descriptive format
