@@ -20,3 +20,10 @@ or
 *  -a , --amount   Base currency amount
 *  -d , --date     Date of convertion rate in yyyy-mm-dd format
 *  -p , --pretty   Print result in pretty descriptive format
+## Issues
+* frankfurter api doesn't seem to daily rates properly on time
+## Todo
+- [] Complete unit test
+- [] Add list option to list available currencies
+- [] Improve pretty print option
+
