@@ -32,4 +32,5 @@ or
 - [ ] Complete unit test
 - [ ] Add list option to list available currencies
 - [ ] Improve pretty print option
+- [ ] Utilize the time series request
 
