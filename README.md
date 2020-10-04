@@ -23,7 +23,7 @@ or
 ## Issues
 * frankfurter api doesn't seem to daily rates properly on time
 ## Todo
-- [] Complete unit test
-- [] Add list option to list available currencies
-- [] Improve pretty print option
+- [ ] Complete unit test
+- [ ] Add list option to list available currencies
+- [ ] Improve pretty print option
 
