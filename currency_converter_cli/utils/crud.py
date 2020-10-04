@@ -60,12 +60,10 @@ def get_remote_rates_and_store(currency_from, currency_to, selected_date=None):
             f'https://api.frankfurter.app/{selected_date}').json()
     else:
         json = requests.get('https://api.frankfurter.app/latest').json()
-
     # If entry already in database for some reason
-    query_result = Dates.get(date=selected_date)
+    query_result = Dates.get(date=json['date'])
     if query_result:
         return _rates_from_json(currency_from, currency_to, json)
-
     # Save into database
     date_obj = Dates(base=json['base'], date=json['date'])
     for code, rate in json['rates'].items():

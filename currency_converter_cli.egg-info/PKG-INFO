@@ -7,5 +7,7 @@ Author: Abdel Rahman Rottab
 Author-email: abdurrahman.rottab@gmail.com
 License: UNKNOWN
 Description: # currency-converter-cli
+        # Setup
+        install pip install -e git+git://github.com/Rottab/currency-converter-cli#egg=currency_converter_cli
 Platform: UNKNOWN
 Requires-Python: >=3.6
