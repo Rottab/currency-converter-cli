@@ -7,7 +7,9 @@ Python 3.6+
 ## Run it
 Run the tool using:
 > currency-converter [options]
+
 or
+
 > cc [options]
 ## Example
 > cc --base usd --to eur --amount 10 --date 2014-01-01
