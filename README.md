@@ -16,7 +16,7 @@ or
 
 > cc --base usd --to eur
 
-> cc --base usd --to eur --amount 10
+> cc --base usd --to eur --amount 5.5 --pretty true
 
 > cc --base usd --to eur --amount 10 --date 2014-01-01
 ## Options
